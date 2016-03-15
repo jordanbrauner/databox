@@ -1,0 +1,139 @@
+/**************************
+CORE STYLES
+**************************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  padding: 100px 50px 50px 50px;
+}
+
+/**************************
+NAV STYLES
+**************************/
+
+nav {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  padding-left: 50px;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  color: white;
+}
+
+nav h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/**************************
+FONT STYLES
+**************************/
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+#wrapper h4 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+#wrapper p {
+  width: 570px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/**************************
+COMMON ELEMENT STYLES
+**************************/
+
+button {
+  width: 120px;
+  background-color: #ddd;
+  border: 0;
+  font-size: .7em;
+  color: white;
+  font-weight: bold;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #bbb;
+}
+
+button:active {
+  background-color: #888;
+}
+
+button:focus {
+  outline: 0;
+}
+
+/**************************
+COMMON D3 STYLES
+**************************/
+
+.d3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 723px;
+}
+
+.d3 svg {
+  width: 600px;
+  height: 200px;
+  background-color: #f7f7f7;
+}
+
+/**************************
+SVG1
+**************************/
+
+
+/**************************
+SVG2
+**************************/
+
+#svg-2 svg rect {
+  fill: black;
+}
+
+#svg-2 svg text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+/**************************
+FOOTER STYLES
+**************************/
+
+footer {
+  border: 1px solid lightgray;
+  padding-left: 50px;
+  width: 100%;
+  height: 150px;
+  /*background-color: lightgray;*/
+}
+
+footer p {
+  padding-top: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+}
