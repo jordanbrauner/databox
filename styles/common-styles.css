@@ -46,18 +46,13 @@ h2 {
 a {
   text-decoration: none;
   color: black;
-  text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
-  letter-spacing: 1.25px;
+  letter-spacing: .5px;
 }
 
 a:hover {
   color: slateblue;
-}
-
-footer span {
-  margin-right: 5px;
 }
 
 /**************************
@@ -123,10 +118,10 @@ footer {
 }
 
 footer div {
-  margin-left: 50px;
   width: 90%;
-  border-top: 1px solid lightgray;
   min-width: 723px;
+  border-top: 1px solid lightgray;
+  margin-left: 50px;
 }
 
 footer div p {
@@ -134,4 +129,8 @@ footer div p {
   padding-top: 20px;
   font-family: 'Lato', sans-serif;
   font-size: 12px;
+}
+
+footer span {
+  margin-right: 9px;
 }

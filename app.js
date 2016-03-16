@@ -162,32 +162,46 @@
   var svg4 = d3.select("div#svg-4 svg");
 
   // Run SVG-4
-  $("#run-4").on("click", function() {
+  $("#run-4").on("click", function(evt) {
 
-    var data4 = [];
-    var n;
-    for (var i = 0; i < 5; i++) {
-      n = Math.floor(Math.random() * 70 - 1) + 10;
-      data4.push(n);
+    var self = $(evt.target);
+
+    // If reset button...
+    if (self.hasClass("reset")) {
+
+      svg4.selectAll("circle").remove();
+
+      // Change button to run
+      self.text("Run");
+      self.removeClass("reset");
+
+    // If run button...
+    } else {
+
+      var data4 = [];
+      var n;
+      for (var i = 0; i < 5; i++) {
+        n = Math.floor(Math.random() * 70 - 1) + 10;
+        data4.push(n);
+      }
+
+      console.log("data4: " + data4);
+
+      svg4.selectAll("circle")
+          .data(data4)
+        .enter().append("circle")
+          .attr("cx", function(d, i) { return i * 100 + 80; })
+          .attr("cy", 100)
+          .attr("r", function(d) { return d; });
+
+      // Change button to reset
+      self.text("Reset");
+      self.addClass("reset");
     }
 
-    console.log("data4: " + data4);
-
-    svg4.selectAll("circle")
-        .data(data4)
-      .enter().append("circle")
-        .attr("cx", function(d, i) { return i * 100 + 80; })
-        .attr("cy", 100)
-        .attr("r", function(d) { return d; });
 
   });
 
-  // Reset SVG-4
-  $("#reset-4").on("click", function() {
-
-    svg4.selectAll("circle").remove();
-
-  });
 
 
 
