@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>D3 Playground</title>
-  <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+  <link rel="stylesheet" type="text/css" href="styles/common-styles.css" />
+  <link rel="stylesheet" type="text/css" href="styles/d3-styles.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -13,13 +14,15 @@
 
     <div id="wrapper">
 
-      <p>This is my D3 Playground</p>
+      <div id="intro">
+        <p>Welcome to my D3 Playground.</p>
+      </div>
 
       <!-- Demo 1 -->
       <h4>Circles</h4>
       <div class="d3" id="svg-1">
         <svg></svg>
-        <button id="action-1">Run</button>
+        <button id="run-1">Run</button>
       </div>
       <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
 
@@ -27,46 +30,47 @@
       <h4>Bar Chart</h4>
       <div class="d3" id="svg-2">
         <svg></svg>
-        <button id="action-2">Run</button>
+        <button id="run-2">Run</button>
       </div>
       <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
 
       <!-- Demo 3 -->
-      <h4>Third Demo</h4>
+      <h4>Squares</h4>
       <div class="d3" id="svg-3">
         <svg></svg>
-        <button id="action-3">Run</button>
+        <button id="run-3">Run</button>
       </div>
       <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
 
       <!-- Demo 4 -->
-      <h4>Fourth Demo</h4>
+      <h4>Fourth</h4>
       <div class="d3" id="svg-4">
         <svg></svg>
-        <button id="action-4">Run</button>
+        <button id="run-4">Run</button>
+        <button id="reset-4">Reset</button>
       </div>
       <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
 
       <!-- Demo 5 -->
-      <h4>Fifth Demo</h4>
+      <h4>Fifth</h4>
       <div class="d3" id="svg-5">
         <svg></svg>
-        <button id="action-5">Run</button>
-      </div>
-      <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
-
-      <!-- Demo 6 -->
-      <h4>Sixth Demo</h4>
-      <div class="d3" id="svg-6">
-        <svg></svg>
-        <button id="action-6">Run</button>
+        <button id="run-5">Run</button>
       </div>
       <p>Tilde deep v street art cardigan beard, gluten-free disrupt tacos health goth mustache. Listicle kitsch ethical, fap health goth thundercats photo booth venmo williamsburg knausgaard hella occupy yr chillwave four loko. Slow-carb godard street art gluten-free. Wayfarers slow-carb chartreuse.</p>
 
     </div>
+    <!-- END of #wrapper -->
 
+    <!-- Footer -->
     <footer>
-      <p>Jordan Brauner</p>
+      <div>
+        <p>
+          <a href="http://www.jordland.com"><span>Jordland</span></a>
+          <span> | </span>
+          <a href="http://www.github.com/jordanbrauner"></span>GitHub</span></a>
+        </p>
+      </div>
     </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
