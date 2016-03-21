@@ -4,7 +4,6 @@
 }
 
 /* Disable text highlighting when clicking on button or svg area */
-
 button, svg {
   -webkit-touch-callout: none;
   -webkit-user-select: none; /* Webkit */

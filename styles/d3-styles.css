@@ -34,17 +34,17 @@ Pair 1 - Scatterplot
 Demo 1 - Circles
 **************************/
 
-#demo-1 circle {
+#demo-1 circle, #demo-2 circle {
   transition: fill .075s linear;
   cursor: pointer;
 }
 
-#demo-1 text {
+#demo-1 text, #demo-2 text {
   fill: white;
   font: 10px sans-serif;
 }
 
-#demo-1 circle:hover {
+#demo-1 circle:hover, #demo-2 circle:hover {
   fill: #4b39b9;
 }
 
