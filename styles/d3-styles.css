@@ -22,24 +22,34 @@ COMMON D3 STYLES
 SVG1
 **************************/
 
-#svg-1 svg circle {
+#demo-1 circle {
   fill: slateblue;
+  transition: fill .075s linear;
 }
 
-#svg-1 svg text {
+#demo-1 text {
   fill: white;
   font: 10px sans-serif;
+}
+
+#demo-1 circle:hover {
+  fill: #4b39b9;
 }
 
 /**************************
 SVG2
 **************************/
 
-#svg-2 svg rect {
+#demo-2 rect {
   fill: slateblue;
+  transition: fill .075s linear;
 }
 
-#svg-2 svg text {
+#demo-2 rect {
+  fill: #4b39b9;
+}
+
+#demo-2 text {
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
@@ -49,19 +59,18 @@ SVG2
 SVG3
 **************************/
 
-#svg-3 svg rect {
+#demo-3 circle {
   fill: slateblue;
-}
-
-#svg-3 svg text {
-  font: 10px sans-serif;
-  fill: white;
 }
 
 /**************************
-SVG3
+SVG4
 **************************/
 
-#svg-4 svg circle {
+#demo-4 circle {
   fill: slateblue;
 }
+
+/**************************
+SVG5
+**************************/

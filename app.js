@@ -8,36 +8,61 @@ $(document).ready(function() {
     demo1: function() {
     /////////////////////////////////////////////
 
-      var svg = d3.select("#svg-1 svg");
-      var data = [20, 30, 40, 50];
+      var svg = d3.select("#demo-1 svg");
+      var numbers = [];
 
-      var circle = svg.selectAll("circle")
-          .data(data)
-        .enter().append("circle")
-          .attr("cy", 100)
-          .attr("cx", function(d, i) {
-            return i * 130 + 100;
-          })
-          .attr("r", function(d) {
-            return d;
-          });
-
-      // SVG Function
-      var svgRun = function () {
-        var n;
-        data = [];
+      // Generate starting data
+      var dataStart = function() {
+        var num;
         for (var i = 0; i < 4; i++) {
-          n = Math.floor(Math.random() * (65 - 1) + 1);
-          data.push(n);
+          num = Math.floor((Math.random() * 25) + 5);
+          numbers.push(num);
         }
-        circle.data(data);
-        circle.attr("r", function(d) { return d; });
       };
 
-      // Run SVG1
+      // Generare new a datum
+      var randomData = function() {
+        var num;
+        if (numbers.length < 6) {
+          num = Math.floor((Math.random() * 30) + 3);
+        }
+        return num;
+      };
+
+      // Update
+      var update = function() {
+        var sel = svg.selectAll("circle")
+          .data(numbers)
+          .attr("cy", 100)
+          .attr("cx", function(d, i) { return i * 90 + 70; })
+          .attr("r", function(d) { return d; });
+
+        // Enter
+        sel.enter()
+          .append("circle")
+          .attr("cy", 100)
+          .attr("cx", function(d, i) { return i * 90 + 70; })
+          .attr("r", function(d) { return d; })
+          .on("click", function(evt, i) {
+            numbers.splice(i, 1);
+            update();
+          });
+
+        // Exit
+        sel.exit().remove();
+
+      };
+
+      // Run Demo
       $("#run-1").on("click", function() {
-        svgRun();
+        if (numbers.length < 6) {
+          numbers.push(randomData());
+          update();
+        }
       });
+
+      dataStart();
+      update();
     },
 
     // Bar Chart ////////////////////////////////
@@ -67,7 +92,7 @@ $(document).ready(function() {
             .range([0, chartWidth]);
 
         // Select svg and give it a width and height
-        var svg = d3.select("div#svg-2 svg");
+        var svg = d3.select("div#demo-2 svg");
 
         // Create group divs for the bars within the svg element with a data join and display them in rows using CSS transform
         var bar = svg.selectAll("g")
@@ -92,62 +117,53 @@ $(document).ready(function() {
         generateBarChart(randomData());
       });
 
+      generateBarChart(randomData());
+
     },
 
     // Squares //////////////////////////////////
     demo3: function() {
     /////////////////////////////////////////////
 
-      var data3 = [40, 60, 80, 100];
-      var svg = d3.select("#svg-3 svg");
+      var svg = d3.select("div#demo-3 svg");
 
-      svg.selectAll("g")
-          .data(data3)
-        .enter().append("g")
-          .attr("transform", function(d, i) { return "translate(" + ((i * 130) + 50) + "," + (200 - d) / 2 + ")"; });
+      var runDemo = function() {
 
-      svg.selectAll("g")
-        .append("rect")
-          .attr("height", function(d) { return d; })
-          .attr("width", function(d) { return d; });
+        var data = function() {
+          var numbers = [];
+          var amount = Math.floor((Math.random() * 20) + 2);
+          for (var i = 1; i < amount; i++) {
+            numbers.push(i);
+          }
+          return numbers;
+        };
 
-      svg.selectAll("g")
-        .append("text")
-          .attr("dy", function(d) { return (d / 2) + 5; })
-          .attr("dx", function(d) { return (d / 2) - 7; })
-          .text(function(d) { return d; });
+        // Update
+        var selection = svg.selectAll("circle")
+            .data(data)
+            .attr("cx", function(d, i) { return (i * 20) + 70; })
+            .attr("cy", 100)
+            .attr("r", function(d) { return d; });
 
-      // Run SVG3
-      $("#run-3").on("click", function() {
+        // Enter
+        selection.enter()
+            .append("circle")
+            .attr("cx", function(d, i) { return (i * 20) + 70; })
+            .attr("cy", 100)
+            .attr("r", function(d) { return d; });
 
-        // Generate new data
-        var newData3 = [];
-        var n3;
-        for (var i = 0; i < 4; i++) {
-          n3 = Math.floor(Math.random() * 100 - 1) + 10;
-          newData3.push(n3);
-        }
-        console.log("newData3: " + newData3);
 
-        // Render new data
-        var newRect = svg.selectAll("g")
-            .data(newData3);
+        // Exit
+        selection.exit().remove();
+      };
 
-        newRect.attr("transform", function(d, i) { return "translate(" + ((i * 130) + 50) + "," + (200 - d) / 2 + ")"; });
+      runDemo();
 
-        newRect.selectAll("rect")
-            .attr("height", function(d) { return d; })
-            .attr("width", function(d) { return d; });
-
-        newRect.selectAll("text")
-            .data(newData3)
-            .attr("dy", function(d) { return (d / 2) + 5; })
-            .attr("dx", function(d) { return (d / 2) - 7; })
-            .text(function(d) { return d; });
-
-        // NOTE Having trouble iterating through the array of new data. Each rectangle gets the first x/y in the array
-
+      // RUN DEMO 5
+      $("#run-3").on("click", function(evt) {
+        runDemo();
       });
+
 
     },
 
@@ -155,31 +171,31 @@ $(document).ready(function() {
     demo4: function() {
     /////////////////////////////////////////////
 
-      var svg4 = d3.select("div#svg-4 svg");
+      var svg = d3.select("div#demo-4 svg");
 
       // SVG 4 FUNCTION
-      var run4 = function(evt) {
+      var run = function(evt) {
         var self = $(evt.target);
 
         // If reset button...
         if (self.hasClass("reset")) {
-          svg4.selectAll("circle").remove();
+          svg.selectAll("circle").remove();
           // Change button to run
           self.text("Run");
           self.removeClass("reset");
 
         // If run button...
         } else {
-          var data4 = [];
+          var data = [];
           var n;
           for (var i = 0; i < 5; i++) {
             n = Math.floor(Math.random() * 70 - 1) + 10;
-            data4.push(n);
+            data.push(n);
           }
 
           // Render circles
-          svg4.selectAll("circle")
-              .data(data4)
+          svg.selectAll("circle")
+              .data(data)
             .enter().append("circle")
               .attr("cx", function(d, i) { return i * 100 + 80; })
               .attr("cy", 100)
@@ -193,9 +209,8 @@ $(document).ready(function() {
 
       // SVG 4 BUTTON
       $("#run-4").on("click", function(evt) {
-        run4(evt);
+        run(evt);
       });
-
 
     },
 
