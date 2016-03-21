@@ -1,6 +1,9 @@
 /**************************
-COMMON D3 STYLES
+Shared D3 Styles
 **************************/
+
+/* Primary Color: slateblue */
+/* Primary Color (darker): #4b39b9; */
 
 .d3 {
   display: flex;
@@ -15,16 +18,25 @@ COMMON D3 STYLES
   background-color: #f7f7f7;
 }
 
-/* Darker slateblue*/
-/*background-color: #4b39b9;*/
+.d3 svg circle, .d3 svg rect {
+  fill: slateblue;
+}
 
 /**************************
-SVG1
+Pair 1 - Scatterplot
+**************************/
+
+#pair-1 {
+
+}
+
+/**************************
+Demo 1 - Circles
 **************************/
 
 #demo-1 circle {
-  fill: slateblue;
   transition: fill .075s linear;
+  cursor: pointer;
 }
 
 #demo-1 text {
@@ -37,15 +49,14 @@ SVG1
 }
 
 /**************************
-SVG2
+Demo 2 - Bar Chart
 **************************/
 
-#demo-2 rect {
-  fill: slateblue;
+/*#demo-2 rect {
   transition: fill .075s linear;
 }
 
-#demo-2 rect {
+#demo-2 rect:hover {
   fill: #4b39b9;
 }
 
@@ -53,24 +64,20 @@ SVG2
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
-}
+}*/
 
 /**************************
-SVG3
+Demo 3 - Update, Enter, Exit
 **************************/
 
-#demo-3 circle {
-  fill: slateblue;
-}
+/*#demo-3 circle {
+
+}*/
 
 /**************************
-SVG4
+Demo 4 - Run / Reset
 **************************/
 
-#demo-4 circle {
-  fill: slateblue;
-}
+/*#demo-4 circle {
 
-/**************************
-SVG5
-**************************/
+}*/

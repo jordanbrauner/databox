@@ -11,6 +11,32 @@ CORE STYLES
   padding: 100px 50px 50px 50px;
 }
 
+button {
+  width: 120px;
+  background-color: #ddd;
+  border: 0;
+  font-size: .7em;
+  color: white;
+  font-weight: bold;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: slateblue;
+}
+
+button:active {
+  background-color: #888;
+}
+
+button:focus {
+  outline: 0;
+}
+
+
 /**************************
 FONT
 **************************/
@@ -56,36 +82,7 @@ a:hover {
 }
 
 /**************************
-COMMON ELEMENTS
-**************************/
-
-button {
-  width: 120px;
-  background-color: #ddd;
-  border: 0;
-  font-size: .7em;
-  color: white;
-  font-weight: bold;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: slateblue;
-}
-
-button:active {
-  background-color: #888;
-}
-
-button:focus {
-  outline: 0;
-}
-
-
-/**************************
-NAV
+Navbar
 **************************/
 
 nav {
@@ -108,7 +105,7 @@ nav h3 {
 
 
 /**************************
-FOOTER STYLES
+Footer
 **************************/
 
 footer {
