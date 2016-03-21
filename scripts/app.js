@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   "use strict";
 
   var app = {
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
       // Generate starting data
       var dataStart = function() {
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 5; i++) {
           numbers.push(datumGen());
         }
       };
@@ -28,8 +28,8 @@ $(document).ready(function() {
       var datumGen = function() {
         var num;
         if (numbers.length < 6) {
-          num = Math.floor((Math.random() * 25) + 5);
-          if (num <= 5) { num += 5; }
+          num = Math.floor(Math.random() * 35);
+          if (num <= 10) { num += 7; }
         }
         return num;
       };
@@ -49,7 +49,7 @@ $(document).ready(function() {
             .attr("cy", 220)
             .attr("r", function(d) { return d; })
             // Click event for circle
-            .on("click", function(evt, i) {
+            .on("click", function(d, i) {
               d3.select(this).transition()
                   .attr("cy", -100)
                   .duration(250)
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     },
 
-    // Demo 2: Testing ground for demo 1 /////////////////////
+    // Demo 2: Test Code for Demo 1 //////////////////////////
     demo2: function() {
     //////////////////////////////////////////////////////////
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
       // Generate starting data
       var dataStart = function() {
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 5; i++) {
           numbers.push(datumGen());
         }
       };
@@ -98,8 +98,8 @@ $(document).ready(function() {
       var datumGen = function() {
         var num;
         if (numbers.length < 6) {
-          num = Math.floor((Math.random() * 25) + 5);
-          if (num <= 5) { num += 5; }
+          num = Math.floor(Math.random() * 35);
+          if (num <= 10) { num += 7; }
         }
         return num;
       };
@@ -119,7 +119,7 @@ $(document).ready(function() {
             .attr("cy", 220)
             .attr("r", function(d) { return d; })
             // Click event for circle
-            .on("click", function(evt, i) {
+            .on("click", function(d, i) {
               d3.select(this).transition()
                   .attr("cy", -100)
                   .duration(250)
@@ -150,12 +150,34 @@ $(document).ready(function() {
 
     },
 
+    // Demo 3: TSV ///////////////////////////////////////////
+    demo3: function() {
+    //////////////////////////////////////////////////////////
+
+    },
+
     //////////////////////////////////////////////////////////
     runApp: function() {
     //////////////////////////////////////////////////////////
       app.pair1();
       app.demo1();
-      app.demo2();
+
+      // TODO How do I make this run on scroll code more DRY (i.e. when using it on multiple DOM elements)
+
+      // Run Demo 2 on scroll
+      // var elem2 = $("#demo-2");
+      // var hasRun2 = false;
+      // $(window).scroll(function(){
+      //   var docViewTop = $(window).scrollTop();
+      //   var docViewBottom = docViewTop + $(window).height();
+      //   var elemTop = $(elem2).offset().top;
+      //   var elemBottom = elemTop + $(elem2).height();
+      //   if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop) && (hasRun2 === false)) {
+      //       hasRun2 = true;
+      //       setTimeout(function() { app.demo2(); }, 200);
+      //   }
+      // });
+
     }
 
   };
