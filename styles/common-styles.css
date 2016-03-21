@@ -2,6 +2,9 @@
 CORE STYLES
 **************************/
 
+/* Primary Color: slateblue */
+/* Primary Color (darker): #4b39b9; */
+
 #wrapper {
   padding: 100px 50px 50px 50px;
 }
@@ -25,7 +28,7 @@ button:hover {
 }
 
 button:active {
-  background-color: #888;
+  background-color: #4b39b9;
 }
 
 button:focus {

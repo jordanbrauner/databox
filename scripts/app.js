@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var app = {
 
-    // Collaboraiton 1: Scatterplot //////////////////////////
+    // Collaboration 1: Bar Chart ////////////////////////////
     pair1: function() {
     //////////////////////////////////////////////////////////
 
@@ -154,6 +154,28 @@ $(document).ready(function() {
     demo3: function() {
     //////////////////////////////////////////////////////////
 
+      var svg = d3.select("#demo-3 svg");
+
+      var salesData = {
+        January: "18",
+        February: "29",
+        March: "25",
+        April: "52",
+        May: "43",
+        June: "47",
+        July: "59",
+        August: "72",
+        September: "54",
+        Opctober: "70",
+        November: "75",
+        December: "79"
+      };
+
+      svg.selectAll("rect")
+        .attr()
+
+
+
     },
 
     //////////////////////////////////////////////////////////
@@ -161,6 +183,7 @@ $(document).ready(function() {
     //////////////////////////////////////////////////////////
       app.pair1();
       app.demo1();
+      app.demo3();
 
       // TODO How do I make this run on scroll code more DRY (i.e. when using it on multiple DOM elements)
 

@@ -18,13 +18,21 @@ Shared D3 Styles
   background-color: #f7f7f7;
 }
 
+#demo-3 svg {
+  height: 400px;
+}
+
 .d3 svg circle, .d3 svg rect {
   fill: slateblue;
 }
 
 /**************************
-Pair 1 - Scatterplot
+Pair 1 - Bar Chart
 **************************/
+
+#pair-1 svg {
+  height: 400px;
+}
 
 #pair-1 {
 
