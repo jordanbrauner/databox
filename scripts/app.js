@@ -46,16 +46,27 @@ $(document).ready(function() {
         // Enter
         sel.enter()
           .append("circle")
-          .attr("cy", 100)
+          .attr("cy", 220)
           .attr("cx", function(d, i) { return i * 90 + 70; })
           .attr("r", function(d) { return d; })
           .on("click", function(evt, i) {
             numbers.splice(i, 1);
             update();
-          });
+          })
+          .transition()
+            .attr("cy", 100)
+            .duration(250);
 
         // Exit
-        sel.exit().remove();
+        // sel.exit().remove();
+
+        sel.exit()
+            .transition()
+            .attr("cy", -100)
+            .duration(250)
+            .each("end", function() {
+              d3.select(this).remove();
+            });
 
       };
 

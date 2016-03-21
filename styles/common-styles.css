@@ -2,11 +2,6 @@
 CORE STYLES
 **************************/
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 #wrapper {
   padding: 100px 50px 50px 50px;
 }
@@ -22,6 +17,7 @@ button {
   text-transform: uppercase;
   transition: background-color 0.2s;
   cursor: pointer;
+  user-select: none;
 }
 
 button:hover {
